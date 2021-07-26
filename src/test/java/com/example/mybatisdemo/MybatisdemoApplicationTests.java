@@ -1,8 +1,10 @@
 package com.example.mybatisdemo;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.mybatisdemo.entity.Grade;
 import com.example.mybatisdemo.entity.Student;
+import com.example.mybatisdemo.entity.User;
 import com.example.mybatisdemo.entity.vo.StudentVo;
 import com.example.mybatisdemo.mapper.StudentMapper;
 import com.example.mybatisdemo.mapper.UserMapper;
@@ -65,16 +67,16 @@ class MybatisdemoApplicationTests {
 
     @Test
     void contextLoads() {
-//        System.out.println(("----- selectAll method test ------"));
-//        String name = "";
-//        Integer age = 1;
-//        // 进行具体条件构造
-//        userService.list(
-//                new LambdaQueryWrapper<User>()
-//                        .select(User::getName)
-//                        .eq(StringUtils.isNotBlank(name), User::getName, name)
-//                        .gt(age != null && age >= 0, User::getAge, 18)
-//        );
+        System.out.println(("----- selectAll method test ------"));
+        String name = "";
+        Integer age = 1;
+        // 进行具体条件构造
+        userService.list(
+                new LambdaQueryWrapper<User>()
+                        .select(User::getName)
+                        .eq(StringUtils.isNotBlank(name), User::getName, name)
+                        .gt(age != null && age >= 0, User::getAge, 18)
+        );
 
 
     }
